@@ -19,6 +19,7 @@ html {
 
   --ft-orange-500: #f28c28;
   --ft-orange-600: #d97706;
+  --ft-orange-ring: rgba(242, 140, 40, 0.45);
 }
 
 /* Light theme: golden-brown / orange / white */
@@ -241,4 +242,41 @@ footer.bg-gray-900 .text-white {
 @keyframes particleMove {
   0% { transform: translate(0, 0); }
   100% { transform: translate(50px, 50px); }
+}
+
+/*
+  Override Tailwind indigo color classes site-wide to match the golden/brown theme.
+  These replacements ensure every page with legacy indigo classes renders correctly
+  without requiring changes to each individual HTML file.
+*/
+
+/* Backgrounds */
+.bg-indigo-600 {
+  background-color: var(--ft-orange-500) !important;
+}
+
+.hover\:bg-indigo-700:hover {
+  background-color: var(--ft-orange-600) !important;
+}
+
+/* Text */
+.text-indigo-600 {
+  color: var(--ft-orange-500) !important;
+}
+
+.hover\:text-indigo-600:hover {
+  color: var(--ft-orange-500) !important;
+}
+
+.hover\:text-indigo-800:hover {
+  color: var(--ft-brown-700) !important;
+}
+
+.text-indigo-400 {
+  color: var(--ft-gold-500) !important;
+}
+
+/* Focus rings */
+.focus\:ring-indigo-500:focus {
+  --tw-ring-color: var(--ft-orange-ring);
 }
